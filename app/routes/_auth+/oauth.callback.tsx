@@ -151,7 +151,7 @@ export default function LoginCallback() {
         );
 
         const groups = user?.user_metadata?.custom_claims.groups || [];
-        formData.append("groups", [JSON.stringify(groups)]);
+        formData.append("groups", JSON.stringify([groups]));
 
         fetcher.submit(formData, { method: "post" });
       }
